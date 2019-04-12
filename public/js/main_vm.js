@@ -2,7 +2,6 @@ import ChatMessage from './modules/ChatMessage.js';
 
 const socket = io();
 
-
 function setUserId ({sID,message}) {
   //debugger;
   console.log('connected', sID, message);
@@ -16,6 +15,7 @@ const vm = new Vue ({
   data: {
     socketID: "",
     nickname: "",
+    sent: "",
     message: "",
     messages: []
   },
@@ -23,7 +23,7 @@ const vm = new Vue ({
     dispatchMessage(){
       //send a chat message
 
-      socket.emit('chat message', { content: this.message, name: this.nickname || "Anonymous"});
+      socket.emit('chat message', { content: this.message, time: this.sent, name: this.nickname || "Anonymous"});
 
       this.message ="";
     }

@@ -5,6 +5,7 @@
 	<title>Socket IO Chat with Node!</title>
 	<link rel="stylesheet" href="css/main.css">
 	<script src="https://unpkg.com/vue"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
 	<main id="app">
@@ -17,6 +18,12 @@
 				<textarea v-model="message" class="message" type="text" autocomplete="off" id="textarea"></textarea>
 				<input type="submit" @click.prevent="dispatchMessage">
 			</form>
+
+			<form>
+				<label for="time">Time</label>
+				<input v-model="sent" type="datetime-local" name="Time">
+			</form>
+
 		</section>
 
 		<section class="messages">
