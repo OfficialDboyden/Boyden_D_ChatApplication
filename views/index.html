@@ -16,12 +16,13 @@
 			<form>
 				<label for="message">Something to say?</label>
 				<textarea v-model="message" class="message" type="text" autocomplete="off" id="textarea"></textarea>
-				<input type="submit" @click.prevent="dispatchMessage">
+
 			</form>
 
 			<form>
 				<label for="time">Time</label>
 				<input v-model="sent" type="datetime-local" name="Time">
+				<input type="submit" @click.prevent="dispatchMessage">
 			</form>
 
 		</section>
